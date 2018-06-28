@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Album">
+      <EntityTypeMapping TypeName="Model.Album">
+        <MappingFragment StoreEntitySet="Album">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CoverImage" ColumnName="CoverImage" />
+          <ScalarProperty Name="SongID" ColumnName="SongID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producer">
+      <EntityTypeMapping TypeName="Model.Producer">
+        <MappingFragment StoreEntitySet="Producer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SongID" ColumnName="SongID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecordingStudio">
+      <EntityTypeMapping TypeName="Model.RecordingStudio">
+        <MappingFragment StoreEntitySet="RecordingStudio">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SongID" ColumnName="SongID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Singer">
+      <EntityTypeMapping TypeName="Model.Singer">
+        <MappingFragment StoreEntitySet="Singer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="NetworthValue" ColumnName="NetworthValue" />
+          <ScalarProperty Name="OtherPopularSong" ColumnName="OtherPopularSong" />
+          <ScalarProperty Name="Residence" ColumnName="Residence" />
+          <ScalarProperty Name="SongID" ColumnName="SongID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Song">
+      <EntityTypeMapping TypeName="Model.Song">
+        <MappingFragment StoreEntitySet="Song">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BeatsPerMinute" ColumnName="BeatsPerMinute" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="IsInColor" ColumnName="IsInColor" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="LengthInSeconds" ColumnName="LengthInSeconds" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+          <ScalarProperty Name="SingersName" ColumnName="SingersName" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="YearRecorded" ColumnName="YearRecorded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SongWriter">
+      <EntityTypeMapping TypeName="Model.SongWriter">
+        <MappingFragment StoreEntitySet="SongWriter">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SongID" ColumnName="SongID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

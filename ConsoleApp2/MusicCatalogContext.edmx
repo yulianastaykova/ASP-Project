@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CoverImage" Type="nvarchar(max)" />
+          <Property Name="SongID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Producer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SongID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RecordingStudio">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SongID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Singer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Gender" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+          <Property Name="NetworthValue" Type="money" Nullable="false" />
+          <Property Name="OtherPopularSong" Type="nvarchar(max)" />
+          <Property Name="Residence" Type="nvarchar(max)" />
+          <Property Name="SongID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Song">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BeatsPerMinute" Type="int" Nullable="false" />
+          <Property Name="Genre" Type="nvarchar(max)" />
+          <Property Name="IsInColor" Type="nvarchar(max)" />
+          <Property Name="Label" Type="nvarchar(max)" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="LengthInSeconds" Type="int" Nullable="false" />
+          <Property Name="Rating" Type="float" Nullable="false" />
+          <Property Name="ReleaseDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="SingersName" Type="nvarchar(max)" />
+          <Property Name="Subtitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="YearRecorded" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SongWriter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="SongID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Album_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Album" Type="Self.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producer_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Producer" Type="Self.Producer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Producer">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecordingStudio_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RecordingStudio" Type="Self.RecordingStudio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RecordingStudio">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Singer_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Singer" Type="Self.Singer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Singer">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SongWriter_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SongWriter" Type="Self.SongWriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SongWriter">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Album" EntityType="Self.Album" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producer" EntityType="Self.Producer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RecordingStudio" EntityType="Self.RecordingStudio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Singer" EntityType="Self.Singer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Song" EntityType="Self.Song" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SongWriter" EntityType="Self.SongWriter" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Album_Song_SongID" Association="Self.FK_Album_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producer_Song_SongID" Association="Self.FK_Producer_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="Producer" EntitySet="Producer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecordingStudio_Song_SongID" Association="Self.FK_RecordingStudio_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="RecordingStudio" EntitySet="RecordingStudio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Singer_Song_SongID" Association="Self.FK_Singer_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="Singer" EntitySet="Singer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SongWriter_Song_SongID" Association="Self.FK_SongWriter_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="SongWriter" EntitySet="SongWriter" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CoverImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SongID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Song" Relationship="Self.FK_Album_Song_SongID" FromRole="Album" ToRole="Song" />
+        </EntityType>
+        <EntityType Name="Producer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SongID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Song" Relationship="Self.FK_Producer_Song_SongID" FromRole="Producer" ToRole="Song" />
+        </EntityType>
+        <EntityType Name="RecordingStudio">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SongID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Song" Relationship="Self.FK_RecordingStudio_Song_SongID" FromRole="RecordingStudio" ToRole="Song" />
+        </EntityType>
+        <EntityType Name="Singer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NetworthValue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="OtherPopularSong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Residence" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SongID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Song" Relationship="Self.FK_Singer_Song_SongID" FromRole="Singer" ToRole="Song" />
+        </EntityType>
+        <EntityType Name="Song">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BeatsPerMinute" Type="Int32" Nullable="false" />
+          <Property Name="Genre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsInColor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Label" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LengthInSeconds" Type="Int32" Nullable="false" />
+          <Property Name="Rating" Type="Double" Nullable="false" />
+          <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="SingersName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Subtitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="YearRecorded" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="Self.FK_Album_Song_SongID" FromRole="Song" ToRole="Album" />
+          <NavigationProperty Name="Producer" Relationship="Self.FK_Producer_Song_SongID" FromRole="Song" ToRole="Producer" />
+          <NavigationProperty Name="RecordingStudio" Relationship="Self.FK_RecordingStudio_Song_SongID" FromRole="Song" ToRole="RecordingStudio" />
+          <NavigationProperty Name="Singer" Relationship="Self.FK_Singer_Song_SongID" FromRole="Song" ToRole="Singer" />
+          <NavigationProperty Name="SongWriter" Relationship="Self.FK_SongWriter_Song_SongID" FromRole="Song" ToRole="SongWriter" />
+        </EntityType>
+        <EntityType Name="SongWriter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SongID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Song" Relationship="Self.FK_SongWriter_Song_SongID" FromRole="SongWriter" ToRole="Song" />
+        </EntityType>
+        <Association Name="FK_Album_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Album" Type="Self.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producer_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Producer" Type="Self.Producer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Producer">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RecordingStudio_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RecordingStudio" Type="Self.RecordingStudio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RecordingStudio">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Singer_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Singer" Type="Self.Singer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Singer">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SongWriter_Song_SongID">
+          <End Role="Song" Type="Self.Song" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SongWriter" Type="Self.SongWriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SongWriter">
+              <PropertyRef Name="SongID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Album" EntityType="Self.Album" />
+          <EntitySet Name="Producer" EntityType="Self.Producer" />
+          <EntitySet Name="RecordingStudio" EntityType="Self.RecordingStudio" />
+          <EntitySet Name="Singer" EntityType="Self.Singer" />
+          <EntitySet Name="Song" EntityType="Self.Song" />
+          <EntitySet Name="SongWriter" EntityType="Self.SongWriter" />
+          <AssociationSet Name="FK_Album_Song_SongID" Association="Self.FK_Album_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producer_Song_SongID" Association="Self.FK_Producer_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="Producer" EntitySet="Producer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RecordingStudio_Song_SongID" Association="Self.FK_RecordingStudio_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="RecordingStudio" EntitySet="RecordingStudio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Singer_Song_SongID" Association="Self.FK_Singer_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="Singer" EntitySet="Singer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SongWriter_Song_SongID" Association="Self.FK_SongWriter_Song_SongID">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="SongWriter" EntitySet="SongWriter" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Album">
+            <EntityTypeMapping TypeName="Model.Album">
+              <MappingFragment StoreEntitySet="Album">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CoverImage" ColumnName="CoverImage" />
+                <ScalarProperty Name="SongID" ColumnName="SongID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producer">
+            <EntityTypeMapping TypeName="Model.Producer">
+              <MappingFragment StoreEntitySet="Producer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SongID" ColumnName="SongID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RecordingStudio">
+            <EntityTypeMapping TypeName="Model.RecordingStudio">
+              <MappingFragment StoreEntitySet="RecordingStudio">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SongID" ColumnName="SongID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Singer">
+            <EntityTypeMapping TypeName="Model.Singer">
+              <MappingFragment StoreEntitySet="Singer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="NetworthValue" ColumnName="NetworthValue" />
+                <ScalarProperty Name="OtherPopularSong" ColumnName="OtherPopularSong" />
+                <ScalarProperty Name="Residence" ColumnName="Residence" />
+                <ScalarProperty Name="SongID" ColumnName="SongID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Song">
+            <EntityTypeMapping TypeName="Model.Song">
+              <MappingFragment StoreEntitySet="Song">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BeatsPerMinute" ColumnName="BeatsPerMinute" />
+                <ScalarProperty Name="Genre" ColumnName="Genre" />
+                <ScalarProperty Name="IsInColor" ColumnName="IsInColor" />
+                <ScalarProperty Name="Label" ColumnName="Label" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="LengthInSeconds" ColumnName="LengthInSeconds" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="SingersName" ColumnName="SingersName" />
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="YearRecorded" ColumnName="YearRecorded" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SongWriter">
+            <EntityTypeMapping TypeName="Model.SongWriter">
+              <MappingFragment StoreEntitySet="SongWriter">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SongID" ColumnName="SongID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<music_catalogue >
+    <song date_released = "2018-06-05" year_recorded = "2017" length_in_seconds = "235" label="Interscope"
+        genre="G6" language="E" is_in_color ="Y">
+        <ID>7</ID>
+        <title>Girls Like You</title>
+        <subtitle>Girls Like You</subtitle>
+        <singers>
+            <singer gender="M" birthdate="1979-03-18">
+                <name>
+                    <first_name>Адам </first_name>
+                    <last_name>Левин </last_name> 
+                </name>
+                <residence>Лос Анджелис, Калифорния, САЩ</residence>
+                <networth value="100000000" currency="USD"/>
+                <other_popular_songs>
+                    <other_popular_song> 
+                        <title>Wait  </title>
+                    </other_popular_song>
+                </other_popular_songs>
+            </singer>
+        </singers>
+        
+        <song_characteristics>
+            <beats_per_minute>125</beats_per_minute>
+            <rating>9.3</rating>
+        </song_characteristics>
+        
+        <recorded_by_which_studios>
+            <studio>
+                <name>Конуей Рекординг Студиос</name>
+                <address>Лос Анджелис, Калифорния</address>
+            </studio>
+        </recorded_by_which_studios>
+        
+        <producers >
+            <producer>
+                <name>Съркът</name>
+            </producer>
+            <producer>
+                <name> Евиган </name>
+            </producer>
+        </producers>
+        
+        <song_writers>
+            <song_writer>
+                <name>Адам Левин</name>
+            </song_writer>
+            <song_writer>
+                <name>Хенри Уолтър</name>
+            </song_writer>
+            <song_writer>
+                <name>Гиъм Стоун</name>
+            </song_writer>
+            <song_writer>
+                <name>Джейсън Евиган</name>
+             </song_writer>
+        </song_writers>
+        
+        <is_in_album year="2017">
+            <title> Red Pill Blues </title>
+            <cover_of_album>
+                <image> Maroon5.jpg </image>
+            </cover_of_album>
+        </is_in_album>
+        
+        <genres>
+            <genre genre_id="G1">Латински поп</genre>
+            <genre genre_id="G2">Ритъм енд блус</genre>
+            <genre genre_id="G3">Регатон поп</genre>
+            <genre genre_id="G4">Индийски регатон</genre>
+            <genre genre_id="G5">Карибски регатон</genre>
+            <genre genre_id="G6">Поп</genre>
+            <genre genre_id="G7">Тропически хаус</genre>
+        </genres>
+        
+        <genders>
+            <gender gender_id="M">Мъж</gender>
+            <gender gender_id="F">Жена</gender>
+        </genders>
+        <languages>
+            <language language_id="E">Английски</language>
+            <language language_id="S">Испански</language>
+        </languages>
+    </song>
+    
+</music_catalogue>

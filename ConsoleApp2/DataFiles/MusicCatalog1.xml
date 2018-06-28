@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<music_catalogue >
+  <song date_released = "2007-02-12" year_recorded = "2006" length_in_seconds = "221" label="Columbia"
+      genre="G1" language="E" is_in_color ="Y">
+    <ID>1</ID>
+    <title>Beautiful Liar</title>
+    <subtitle>Beautifu Liar</subtitle>
+    <singers>
+      <singer gender="F" birthdate="1981-09-04">
+        <name>
+          <first_name>Бионсе </first_name>
+          <last_name>Ноулс </last_name>
+        </name>
+        <residence>Лос Анджелис, Калифорния</residence>
+        <networth value="500000000" currency="USD"/>
+        <other_popular_songs>
+          <other_popular_song>
+            <title>Crazy in Love </title>
+          </other_popular_song>
+        </other_popular_songs>
+      </singer>
+      <singer gender = "F" birthdate = "1977-02-02">
+        <name>
+          <first_name>Шакира</first_name>
+          <last_name>Мебарак </last_name>
+        </name>
+        <residence>Барселона, Испания</residence>
+        <networth value="300000000" currency="USD"/>
+        <other_popular_songs>
+          <other_popular_song>
+            <title> Waka Waka</title>
+          </other_popular_song>
+        </other_popular_songs>
+      </singer>
+    </singers>
+
+    <song_characteristics>
+      <beats_per_minute>92</beats_per_minute>
+      <rating>6,5</rating>
+    </song_characteristics>
+
+    <recorded_by_which_studios>
+      <studio>
+        <name>Сони Мюзик Студиос</name>
+        <address>Ню Йорк</address>
+      </studio>
+      <studio>
+        <name>Батери Студиос</name>
+        <address>Ню Йорк</address>
+      </studio>
+      <studio>
+        <name>Ла Маримонда</name>
+        <address>Насау, Бахами</address>
+      </studio>
+      <studio>
+        <name>Футура Продукшънс</name>
+        <address>Розлиндейл, Бостън, Масачузетс </address>
+      </studio>
+      <studio>
+        <name>Хит Фактори</name>
+        <address>Маями, Флорида</address>
+      </studio>
+    </recorded_by_which_studios>
+
+    <producers >
+      <producer>
+        <name>СтарГейт</name>
+      </producer>
+      <producer>
+        <name>Бионсе Ноулс</name>
+      </producer>
+    </producers>
+
+    <song_writers>
+      <song_writer>
+        <name>Микел С. Ериксен</name>
+      </song_writer>
+      <song_writer>
+        <name>Тор Ерик Хермансен</name>
+      </song_writer>
+      <song_writer>
+        <name>Аманда Гоуст</name>
+      </song_writer>
+      <song_writer>
+        <name>Иан Денч</name>
+      </song_writer>
+      <song_writer>
+        <name>Бионсе Ноулс</name>
+      </song_writer>
+    </song_writers>
+
+    <is_in_album year="2006">
+      <title>Би'дей</title>
+      <cover_of_album>
+        <image>B-day.jpg </image>
+      </cover_of_album>
+    </is_in_album>
+
+    <genres>
+      <genre genre_id="G1">Латински поп</genre>
+      <genre genre_id="G2">Ритъм енд блус</genre>
+      <genre genre_id="G3">Регатон поп</genre>
+      <genre genre_id="G4">Индийски регатон</genre>
+      <genre genre_id="G5">Карибски регатон</genre>
+      <genre genre_id="G6">Поп</genre>
+      <genre genre_id="G7">Тропически хаус</genre>
+    </genres>
+
+    <genders>
+      <gender gender_id="M">Мъж</gender>
+      <gender gender_id="F">Жена</gender>
+    </genders>
+    <languages>
+      <language language_id="E">Английски</language>
+      <language language_id="S">Испански</language>
+    </languages>
+  </song>
+
+</music_catalogue>

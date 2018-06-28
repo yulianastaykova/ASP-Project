@@ -1,0 +1,11 @@
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\bin\Debug\ConsoleApp2.exe.config
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\bin\Debug\ConsoleApp2.pdb
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\bin\Debug\EntityFramework.dll
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\bin\Debug\EntityFramework.SqlServer.dll
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\bin\Debug\EntityFramework.xml
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\bin\Debug\EntityFramework.SqlServer.xml
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\obj\Debug\MusicCatalogData.csprojResolveAssemblyReference.cache
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\obj\Debug\MusicCatalogData.csproj.CoreCompileInputs.cache
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\obj\Debug\ConsoleApp2.exe
+E:\ИС 2017-2018\Летен семестър\ASP програмиране - Павлов\Финален проект 71602\MusicCatalogueV3\ConsoleApp2\obj\Debug\ConsoleApp2.pdb

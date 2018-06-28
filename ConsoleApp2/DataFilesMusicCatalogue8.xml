@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<music_catalogue >
+    <song date_released = "2018-02-09" year_recorded = "2017" length_in_seconds = "202" label="Asylum"
+        genre="G2" language="E" is_in_color ="Y">
+        <ID>8</ID>
+        <title>Приятели</title>
+        <subtitle>Приятели</subtitle>
+        <singers>
+            <singer gender="F" birthdate="1991-04-07">
+                <name>
+                    <first_name>Ан-Мари </first_name>
+                    <last_name>Никълсън </last_name> 
+                </name>
+                <residence>Източен Тилбъри, Есекс, Англия</residence>
+                <networth value="20000000" currency="USD"/>
+                <other_popular_songs>
+                    <other_popular_song> 
+                        <title>Rockabye </title>
+                    </other_popular_song>
+                </other_popular_songs>
+            </singer>
+            <singer gender="M" birthdate="1992-05-19">
+                <name>
+                    <first_name>Кристофър </first_name>
+                    <last_name>Комсток </last_name> 
+                </name>
+                <residence>Филаделфия, Пенсилвания, САЩ</residence>
+                <networth value="80000000" currency="USD"/>
+                <other_popular_songs>
+                    <other_popular_song> 
+                        <title>Alone </title>
+                    </other_popular_song>
+                </other_popular_songs>
+            </singer>
+        </singers>
+        
+        <song_characteristics>
+            <beats_per_minute>95</beats_per_minute>
+            <rating>7.1</rating>
+        </song_characteristics>
+        
+        <recorded_by_which_studios>
+            <studio>
+                <name>Конуей Рекординг Студиос</name>
+                <address>Лос Анджелис, Калифорния</address>
+            </studio>
+        </recorded_by_which_studios>
+        
+        <producers >
+            <producer>
+                <name>Маршмелоу</name>
+            </producer>
+        </producers>
+        
+        <song_writers>
+            <song_writer>
+                <name>Маршмелоу</name>
+            </song_writer>
+            <song_writer>
+                <name>Ан-Мари Никълсън</name>
+            </song_writer>
+            <song_writer>
+                <name>Еден Андерсън</name>
+            </song_writer>
+            <song_writer>
+                <name>Жасмин Томсън</name>
+             </song_writer>
+              <song_writer>
+                <name>Ричард Бордман</name>
+            </song_writer>
+            <song_writer>
+                <name>Натали Дън</name>
+            </song_writer>
+            <song_writer>
+                <name>Пабло Боуман</name>
+             </song_writer>
+        </song_writers>
+        
+        <is_in_album year="2017">
+            <title> Speak Your Mind </title>
+            <cover_of_album>
+                <image> Anne-Marie.jpg </image>
+            </cover_of_album>
+        </is_in_album>
+        
+        <genres>
+            <genre genre_id="G1">Латински поп</genre>
+            <genre genre_id="G2">Ритъм енд блус</genre>
+            <genre genre_id="G3">Регатон поп</genre>
+            <genre genre_id="G4">Индийски регатон</genre>
+            <genre genre_id="G5">Карибски регатон</genre>
+            <genre genre_id="G6">Поп</genre>
+            <genre genre_id="G7">Тропически хаус</genre>
+        </genres>
+        
+        <genders>
+            <gender gender_id="M">Мъж</gender>
+            <gender gender_id="F">Жена</gender>
+        </genders>
+        <languages>
+            <language language_id="E">Английски</language>
+            <language language_id="S">Испански</language>
+        </languages>
+    </song>
+    
+</music_catalogue>

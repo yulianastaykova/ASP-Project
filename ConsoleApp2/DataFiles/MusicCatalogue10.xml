@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<music_catalogue >
+    <song date_released = "2002-10-22" year_recorded = "2001" length_in_seconds = "320" label="Shady"
+        genre="G2" language="E" is_in_color ="Y">
+        <ID>10</ID>
+        <title>Lose Yourself</title>
+        <subtitle>Lose Yourself</subtitle>
+        <singers>
+            <singer gender="M" birthdate="1972-10-17">
+                <name>
+                    <first_name>Маршал </first_name>
+                    <last_name>Мадърс Трети </last_name> 
+                </name>
+                <residence>Рочестър Хилс, Мичиган, САЩ</residence>
+                <networth value="1500000000" currency="USD"/>
+                <other_popular_songs>
+                    <other_popular_song> 
+                        <title>Monster </title>
+                    </other_popular_song>
+                </other_popular_songs>
+            </singer>
+        </singers>
+        
+        <song_characteristics>
+            <beats_per_minute>171</beats_per_minute>
+            <rating>8.57</rating>
+        </song_characteristics>
+        
+        <recorded_by_which_studios>
+            <studio>
+                <name>Конуей Рекординг Студиос</name>
+                <address>Детройт, Мичиган</address>
+            </studio>
+        </recorded_by_which_studios>
+        
+        <producers >
+            <producer>
+                <name>Еминем</name>
+            </producer>
+            <producer>
+                <name> Джеф Бас </name>
+            </producer>
+        </producers>
+        
+        <song_writers>
+            <song_writer>
+                <name>Маршал Мадърс</name>
+            </song_writer>
+           
+        </song_writers>
+        
+        <is_in_album year="2017">
+            <title> 8 mile </title>
+            <cover_of_album>
+                <image> Eminem8Mile.jpg </image>
+            </cover_of_album>
+        </is_in_album>
+        
+        <genres>
+            <genre genre_id="G1">Латински поп</genre>
+            <genre genre_id="G2">Ритъм енд блус</genre>
+            <genre genre_id="G3">Регатон поп</genre>
+            <genre genre_id="G4">Индийски регатон</genre>
+            <genre genre_id="G5">Карибски регатон</genre>
+            <genre genre_id="G6">Поп</genre>
+            <genre genre_id="G7">Тропически хаус</genre>
+        </genres>
+        
+        <genders>
+            <gender gender_id="M">Мъж</gender>
+            <gender gender_id="F">Жена</gender>
+        </genders>
+        <languages>
+            <language language_id="E">Английски</language>
+            <language language_id="S">Испански</language>
+        </languages>
+    </song>
+    
+</music_catalogue>
